@@ -63,11 +63,9 @@ public class DepartmentFormController implements Initializable {
 			service.saveOrUpdate(entity);
 			notifyDataChangeListeners();
 			Utils.currentStage(event).close();
-		} 
-		catch (DbException e) {
+		} catch (DbException e) {
 			Alerts.showAlert("ERROR", null, e.getMessage(), AlertType.ERROR);
-		} 
-		catch (ValidationException ex) {
+		} catch (ValidationException ex) {
 			setErrorMessages(ex.getErrors());
 		}
 	}
