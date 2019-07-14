@@ -24,4 +24,9 @@ public class DepartmentService {
 			Alerts.showAlert("SUCESSO", null, "Departamento atualizado com sucesso!!", AlertType.CONFIRMATION);
 		}
 	}
+	
+	public void remove(Department obj) {
+		dao.deleteById(obj.getId());
+		Alerts.showAlert("SUCESSO", null, "Departamento removido com sucesso!!", AlertType.CONFIRMATION);
+	}
 }
